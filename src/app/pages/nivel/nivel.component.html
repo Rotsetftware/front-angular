@@ -1,0 +1,6 @@
+<p>nivel works!</p>
+
+<div *ngFor="let nivel of niveles">
+    <h1>{{nivel.nivel}}</h1>
+    <button (click)="seleccion(nivel.idNivel)">Jugar</button>
+</div>

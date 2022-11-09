@@ -1,0 +1,74 @@
+<h2>Crear equipo</h2>
+<hr>
+
+<form (ngSubmit)="save()" #miFormulario="ngForm">
+    <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Equipo</label>
+        <div class="col-sm-9">
+            <input class="form-control" 
+            name="equipo"
+            [(ngModel)]="equipo.equipo"
+            placeholder="Nombre del equipo" required>
+            <span *ngIf="miFormulario.controls['equipo']?.errors && miFormulario.controls['equipo']?.touched" 
+            class="form-text text-danger">
+                Este campo es obligatorio
+            </span>
+        </div>
+    </div>
+
+    <!--Añadir Habilidades-->
+    <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Añadir</label>
+        <div class="col-sm-9">
+            <div class="input-group">
+                <input class="form-control" 
+                [(ngModel)]="newHab"
+                name="newHab"
+                (keyup.enter)="addHab()"
+                placeholder="Agregar integrante">
+                <button  type="button" class="btn btn-primary"
+                (click)="addHab()">
+                    Añadir
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!--Lista de Habilidades-->
+
+    <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Integrantes</label>
+        <div class="col-sm-9">
+            <div *ngFor="let h of equipo.matriculas; let i = index"
+            class="input-group mb-2">
+                <input 
+                [(ngModel)]="h.matricula" 
+                [name]="'habilidad_'+ i"
+                class="form-control">
+                <button (click)="eliminar(i)" type="button" class="btn btn-danger">
+                    Eliminar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!--Botón Guardar-->
+
+    <div class="row">
+        <div class="col-sm-9">
+            <button type="button" 
+            [disabled]="miFormulario.invalid"
+            (click)="save()" class="btn btn-success">
+                Guardar
+            </button>
+        </div>
+    </div>
+</form>
+
+<div>
+    <hr>
+    <h4>Equipo:</h4>
+    <p>
+        {{equipo | json}}
+    </p>
+</div>

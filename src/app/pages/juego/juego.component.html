@@ -1,0 +1,5 @@
+<p>juego works!</p>
+<div *ngFor="let juego of juegos">
+    <h1>{{juego.juego}}</h1>
+    <button (click)="seleccion(juego.idJuego)">Jugar</button>
+</div>

@@ -1,0 +1,15 @@
+<p>pregunta works!</p>
+<h1>{{tiempo}}</h1>
+<hr>
+
+<button (click)="seleccion()">Jugar</button>
+<hr>
+<div *ngFor="let pregunta of preguntas">
+    <h1>{{pregunta.pregunta}}</h1>
+    <h2>{{pregunta.puntaje}}</h2>
+    <h3>{{pregunta.tiempo}}</h3>
+    <h3>{{pregunta.respuesta1}}</h3>
+    <h3>{{pregunta.respuesta2}}</h3>
+    <h3>{{pregunta.respuesta3}}</h3>
+    <h3>{{pregunta.respuesta4}}</h3>
+</div>

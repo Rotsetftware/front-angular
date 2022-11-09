@@ -1,0 +1,65 @@
+<div class="body">
+    <div class="container">
+        <div *ngIf="seleccion == 'sombrero'" id="sombreroId">&nbsp;</div>
+        <div *ngIf="seleccion == 'tenis'" id="monito">&nbsp;</div>
+        <div *ngIf="seleccion == 'corbata'" id="monito">&nbsp;</div>
+      </div>
+      <div class="container">
+        <div class="accesorios">
+          <h1>Accesorios</h1>
+          <table class="tabla" align="center">
+            <tr>
+              <td (click)="accesorio(1)"><img src="../../../assets/img/sombrero_original.png" alt="sombrero" class="img"></td>
+              <td (click)="accesorio(2)"><img src="../../../assets/img/tenis.png" alt="sombrero" class="img"></td>
+              <td (click)="accesorio(3)"><img src="../../../assets/img/corbata.png" alt="sombrero" class="img"></td>
+            </tr>
+          </table>
+        </div>
+        <hr>
+        <div class="colores" [hidden]="seleccion !='sombrero'">
+          <h1>Sombrero</h1>
+          <table class="tabla" align="center">
+            <tr>
+              <td><div id="rojo">&nbsp;</div></td>
+              <td><div id="verde">&nbsp;</div></td>
+              <td><div id="amarillo">&nbsp;</div></td>
+            </tr>
+            <tr>
+              <td><div id="azul">&nbsp;</div></td>
+              <td><div id="cafe">&nbsp;</div></td>
+              <td><div id="blanco">&nbsp;</div></td>
+            </tr>
+          </table>
+        </div>
+        <div class="colores" [hidden]="seleccion !='tenis'">
+          <h1>Tenis</h1>
+          <table class="tabla" align="center">
+            <tr>
+              <td><div id="rojo">&nbsp;</div></td>
+              <td><div id="verde">&nbsp;</div></td>
+              <td><div id="amarillo">&nbsp;</div></td>
+            </tr>
+            <tr>
+              <td><div id="azul">&nbsp;</div></td>
+              <td><div id="cafe">&nbsp;</div></td>
+              <td><div id="blanco">&nbsp;</div></td>
+            </tr>
+          </table>
+        </div>
+        <div class="colores" [hidden]="seleccion !='corbata'">
+          <h1>Corbata</h1>
+          <table class="tabla" align="center">
+            <tr>
+              <td><div id="rojo">&nbsp;</div></td>
+              <td><div id="verde">&nbsp;</div></td>
+              <td><div id="amarillo">&nbsp;</div></td>
+            </tr>
+            <tr>
+              <td><div id="azul">&nbsp;</div></td>
+              <td><div id="cafe">&nbsp;</div></td>
+              <td><div id="blanco">&nbsp;</div></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div>

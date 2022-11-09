@@ -1,0 +1,84 @@
+#sombreroId {
+    clip-path: polygon(27% 15.25%, 73.75% 15.25%, 73.75% 33.5%, 73.75% 41.25%, 73.75% 46.37%, 86.75% 46.37%, 93% 38.75%, 100% 43.75%, 100% 55.85%, 96.33% 57.22%, 97.99% 62.51%, 83.59% 80.6%, 61.18% 86.32%, 33.75% 86.32%, 16.88% 74.93%, 0% 63.55%, 0% 41.25%, 12.46% 41.25%, 27% 46.08%);
+    /* background: url("transparente.png") 0% 0% / cover; */
+    background: url("../../../assets/img/white.png") 0% 0% / cover;
+    filter: hue-rotate(0deg);
+    /* background-color: black; */
+    width: 200px;
+    height: 200px;
+}
+
+#rojo {
+  background-color: red;
+  border: 1px solid red;
+  width: 35px;
+  height: 35px;
+}
+
+#verde {
+    background-color: green;
+    border: 1px solid green;
+    width: 35px;
+    height: 35px;
+  }
+
+  #amarillo {
+    background-color: yellow;
+    border: 1px solid yellowg;
+    width: 35px;
+    height: 35px;
+  }
+
+  #azul {
+    background-color: blue;
+    border: 1px solid blue;
+    width: 35px;
+    height: 35px;
+  }
+
+  #cafe {
+    background-color: brown;
+    border: 1px solid brown;
+    width: 35px;
+    height: 35px;
+  }
+
+  #blanco {
+    background-color: white;
+    border: 1px solid black;
+    width: 35px;
+    height: 35px;
+  }
+
+.body{
+    display: flex;
+}
+
+.container {
+    max-width: 50%;
+    /* border: 1px solid black; */
+    margin: auto;
+}
+
+.colores {
+    max-width: 100%;
+    padding: 5px;
+    // border: 1px solid black;
+    margin: auto;
+}
+
+.accesorios {
+    max-width: 100%;
+    padding: 5px;
+    // border: 1px solid black;
+    margin: auto;
+}
+
+hr{
+    border-color: transparent;
+}
+
+img, .img{
+    max-width: 100px;
+    max-height: 100px;
+}
