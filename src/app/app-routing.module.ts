@@ -12,8 +12,14 @@ import { JugandoComponent } from './pages/client/jugando/jugando.component';
 import { UnirmeComponent } from './pages/client/unirme/unirme.component';
 import { EquipoComponent } from './pages/client/equipo/equipo.component';
 import { ComienzajuegoComponent } from './pages/client/comienzajuego/comienzajuego.component';
+import { VideogameComponent } from './pages/client/videogame/videogame.component';
+import { EstadisticasComponent } from './cliente/estadisticas/estadisticas.component';
 
 const routes: Routes = [
+  {
+    path: 'estadisticas',
+    component: EstadisticasComponent
+  },
   {
     path: 'home',
     component: HomeComponent
@@ -44,7 +50,7 @@ const routes: Routes = [
   },
   {
     path: 'jugar/:room',
-    component: JugarComponent
+    component: VideogameComponent
   },
   {
     path: 'jugando/:room',

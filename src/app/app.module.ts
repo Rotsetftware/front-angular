@@ -20,6 +20,10 @@ import { VideogameComponent } from './pages/client/videogame/videogame.component
 import { UnirmeComponent } from './pages/client/unirme/unirme.component';
 import { EquipoComponent } from './pages/client/equipo/equipo.component';
 import { ComienzajuegoComponent } from './pages/client/comienzajuego/comienzajuego.component';
+import { PreplayComponent } from './client/preplay/preplay.component';
+import { RankComponent } from './cliente/rank/rank.component';
+import { FinaljuegoComponent } from './cliente/finaljuego/finaljuego.component';
+import { EstadisticasComponent } from './cliente/estadisticas/estadisticas.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +41,11 @@ import { ComienzajuegoComponent } from './pages/client/comienzajuego/comienzajue
     VideogameComponent,
     UnirmeComponent,
     EquipoComponent,
-    ComienzajuegoComponent
+    ComienzajuegoComponent,
+    PreplayComponent,
+    RankComponent,
+    FinaljuegoComponent,
+    EstadisticasComponent
   ],
   imports: [
     BrowserModule,

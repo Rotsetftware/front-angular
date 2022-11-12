@@ -11,12 +11,15 @@ import { SocketService } from 'src/app/providers/socket.service';
 export class JugarComponent implements OnInit{
 
   room: any;
+  play: boolean | undefined;
 
   constructor(private AR: ActivatedRoute, private CS: CookieService, private SC: SocketService) {}
 
   ngOnInit(): void {
     this.room = this.AR.snapshot.paramMap.get('room');
     console.log(this.room);
+    this.play = false;
+    // this.play = true;
   }
 
 }

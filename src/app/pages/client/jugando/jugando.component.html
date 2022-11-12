@@ -1,6 +1,26 @@
-<h1 align="center">Sala: {{room}}</h1>
-<hr>
-<!-- <input type="text" name="text" value="{{textRes}}" id="textoId" #textoRef> -->
-<div *ngFor="let user of usuario">
-    <h1>{{user}}</h1>
+<div *ngIf="sala">
+    <h1 align="center">Sala: {{room}}</h1>
+    <hr>
+    <!-- <input type="text" name="text" value="{{textRes}}" id="textoId" #textoRef> -->
+    <div *ngFor="let user of usuario">
+        <h1>{{user}}</h1>
+    </div>
 </div>
+
+<h1 *ngIf="play">{{tiempoReal}}</h1>
+
+<app-rank *ngIf="rank"></app-rank>
+
+<app-finaljuego *ngIf="final"></app-finaljuego>
+
+<app-preplay *ngIf="pre"></app-preplay>
+
+<app-comienzajuego *ngIf="play"></app-comienzajuego>
+
+<hr>
+<!-- <button type="submit" name="boton" id="botonId" (click)="variable1()">
+    Variable false
+</button>
+<button type="submit" name="boton" id="botonId" (click)="variable2()">
+    Variable true
+</button> -->

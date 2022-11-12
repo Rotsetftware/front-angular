@@ -14,6 +14,7 @@ export class PreguntaComponent implements OnInit {
   id: any;
   preguntas: any;
   tiempo = 1;
+  array: any [] = [];
 
   constructor(private router: Router, private AR: ActivatedRoute, private api: ApiService, private CS: CookieService) { }
 
@@ -21,8 +22,22 @@ export class PreguntaComponent implements OnInit {
     this.id = this.AR.snapshot.params['id'];
     console.log(this.id);
     this.getPreguntas();
-    this.time();
+    // this.time();
   }
+
+  // pregunts(res: any){
+  //   for(const val of res){
+  //     this.array.push(val.idPregunta);
+  //     this.array.sort(function() { return Math.random() - 0.5 });
+  //   }
+  //   console.log(this.array)
+  // }
+
+  // random(){
+  //   console.log(this.array[this.array.length-1]);
+  //   this.array.pop();
+  //   console.log(this.array);
+  // }
 
   time() {
     let intervalId = setInterval(() => {
@@ -47,6 +62,7 @@ export class PreguntaComponent implements OnInit {
     this.api.getPreguntasId(this.id).subscribe((data: Pregunta) => {
       console.log(data);
       this.preguntas = data;
+      // this.pregunts(this.preguntas);
     });
   }
 

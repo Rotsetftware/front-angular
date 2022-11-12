@@ -1,8 +1,33 @@
-<h1 align="center">Sala: {{room}}</h1>
-<hr>
-<!-- <input type="text" name="text" value="{{textRes}}" id="textoId" #textoRef> -->
-<div *ngFor="let user of usuario">
-    <h1>{{user}}</h1>
+<div *ngIf="sala">
+    <h1 align="center">Sala: {{ room }}</h1>
+    <hr />
+    <!-- <input type="text" name="text" value="{{textRes}}" id="textoId" #textoRef> -->
+    <div *ngFor="let user of usuario">
+        <h1>{{ user }}</h1>
+    </div>
+    <hr />
+    <button *ngIf="idPreguntas" type="submit" name="boton" id="botonId" (click)="boton()">
+        Jugar
+    </button>
 </div>
+
+<h1 *ngIf="play">{{tiempoReal}}</h1>
+
+<app-rank *ngIf="rank"></app-rank>
+
+<app-finaljuego *ngIf="final"></app-finaljuego>
+
+<app-comienzajuego *ngIf="play"></app-comienzajuego>
+<app-preplay *ngIf="pre"></app-preplay>
 <hr>
-<button *ngIf="idPreguntas" type="submit" name="boton" id="botonId" (click)="boton()">Prueba</button>
+<button *ngIf="orden != undefined" type="submit" name="boton" id="botonId" (click)="siguiente()">
+    Siguiente
+</button>
+
+<button *ngIf="finJuego" type="submit" name="boton" id="botonId" (click)="finalizar()">
+    finalizar
+</button>
+
+<button *ngIf="salir" type="submit" name="boton" id="botonId" (click)="exit()">
+    Salir
+</button>

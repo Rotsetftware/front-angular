@@ -1,8 +1,7 @@
 <p>comienzajuego works!</p>
-<h1>{{tiempo}}</h1>
 <hr>
 <div *ngFor="let item of xd">
-    <div [hidden]="item.idPregunta != 1">
+    <div [hidden]="item.idPregunta != orden">
         <input type="text" value="{{item.pregunta}}" disabled>
         <hr>
         <button type="button">{{item.respuesta1}}</button>
@@ -11,3 +10,4 @@
         <button type="button">{{item.respuesta4}}</button>
     </div>
 </div>
+<hr>
