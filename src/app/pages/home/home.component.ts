@@ -9,8 +9,6 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class HomeComponent implements OnInit {
 
-  tiempo: number = 5;
-
   room = {
     codigo: ''
   };
@@ -18,7 +16,6 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router, private CS: CookieService) { }
   
   ngOnInit(): void {
-    this.time();
   }
 
   sala = () => {
@@ -27,15 +24,6 @@ export class HomeComponent implements OnInit {
 
   nivel = () => {
     this.router.navigate(['niveles',]);
-  }
-
-  time() {
-    let intervalId = setInterval(() => {
-      this.CS.deleteAll();
-      this.tiempo = this.tiempo - 1;
-      console.log(this.tiempo)
-      if (this.tiempo === 0) clearInterval(intervalId)
-    }, 1000)
   }
 
   unirse(){
