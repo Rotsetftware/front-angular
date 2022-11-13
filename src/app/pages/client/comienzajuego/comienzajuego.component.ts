@@ -28,15 +28,20 @@ export class ComienzajuegoComponent implements OnInit {
   constructor(private CS: CookieService, private API: ApiService) { }
 
   ngOnInit(): void {
+    const coockie = this.CS.get('preguntas');
+      const JSobj = JSON.parse(coockie);
+      this.xd = JSobj;
+      console.log(this.xd);
+
     this.orden = this.CS.get('orden');
-    console.log('orden');
-    console.log(this.orden);
-    this.idP = this.CS.get('idPreguntas');
-    // console.log(this.idP);
-    this.API.getPreguntasId(this.idP).subscribe((data: any) => {
-      console.log(data);
-      this.xd = data;
-    });
+    // console.log('orden');
+    // console.log(this.orden);
+    // this.idP = this.CS.get('idPreguntas');
+    // // console.log(this.idP);
+    // this.API.getPreguntasId(this.idP).subscribe((data: any) => {
+    //   console.log(data);
+    //   this.xd = data;
+    // });
     // this.time();
   }
 

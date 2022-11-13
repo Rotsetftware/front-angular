@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, HostListener, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { ApiService } from 'src/app/providers/api.service';
@@ -9,7 +9,7 @@ import { SocketService } from 'src/app/providers/socket.service';
   templateUrl: './jugando.component.html',
   styleUrls: ['./jugando.component.scss']
 })
-export class JugandoComponent implements OnInit {
+export class JugandoComponent implements OnInit, OnDestroy {
 
   room: any;
   datas: any;
@@ -30,10 +30,21 @@ export class JugandoComponent implements OnInit {
   xd: any;
   orden: any;
 
+  ngOnDestroy(): void {
+    this.SWS.disconnect();
+  }
+
   constructor(private SWS: SocketService, private AR: ActivatedRoute, private CS: CookieService, private API: ApiService, private router: Router) {
     this.SWS.outEven.subscribe(res => {
-      const { play, coockie, orden, data, rank, final, router} = res;
-      if(router){
+      const { play, coockie, orden, data, rank, final, router, id} = res;
+      if(id){
+        this.API.getPreguntasId(id).subscribe((data: any) => {
+          this.xd = data;
+          console.log(data);
+          const JSON_string = JSON.stringify(data);
+        this.CS.set('preguntas',JSON_string);
+        });
+      } else if(router){
         this.router.navigate(['/estadisticas']);
       } else if(final){
         this.final = true;
@@ -42,30 +53,26 @@ export class JugandoComponent implements OnInit {
         this.rank = true;
       } else if(data){
         this.rank = false;
-        this.API.getPreguntasId(this.idP).subscribe((data: any) => {
-          this.xd = data;
-          for(const val of this.xd){
-            if(val.idPregunta == orden){
-            console.log(val.tiempo);
-            this.tiempoReal = val.tiempo;
-            }
+
+        for(const val of this.xd){
+          if(val.idPregunta == orden){
+          console.log(val.tiempo);
+          this.tiempoReal = val.tiempo;
           }
-        });
+        }
+
         console.log('orden');
         CS.delete('orden');
         CS.set('orden',orden);
         this.play = true;
         this.time();
       }else if(play){
-        this.API.getPreguntasId(this.idP).subscribe((data: any) => {
-          this.xd = data;
-          for(const val of this.xd){
-            if(val.idPregunta == orden){
-            console.log(val.tiempo);
-            this.tiempoReal = val.tiempo;
-            }
+        for(const val of this.xd){
+          if(val.idPregunta == orden){
+          console.log(val.tiempo);
+          this.tiempoReal = val.tiempo;
           }
-        });
+        }
         console.log(orden);
         this.sala = false;
         CS.set('idPreguntas',coockie);

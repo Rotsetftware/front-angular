@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { ApiService } from 'src/app/providers/api.service';
@@ -9,7 +9,7 @@ import { SocketService } from 'src/app/providers/socket.service';
   templateUrl: './videogame.component.html',
   styleUrls: ['./videogame.component.scss']
 })
-export class VideogameComponent implements OnInit , AfterViewInit{
+export class VideogameComponent implements OnInit , AfterViewInit, OnDestroy{
 
   room: any;
   idPreguntas: any;
@@ -34,6 +34,10 @@ export class VideogameComponent implements OnInit , AfterViewInit{
     this.render();
   }
 
+  ngOnDestroy(): void {
+    this.SC.disconnect();
+  }
+
   private render(): any {
 
   }
@@ -47,6 +51,7 @@ export class VideogameComponent implements OnInit , AfterViewInit{
   emitirUsuario(res: any){
     console.log(res);
     this.SC.emitEvent(res);
+    this.SC.emitEvent({id: this.idPreguntas});
   }
 
   almacenarUsuario(res: any){
@@ -64,6 +69,8 @@ export class VideogameComponent implements OnInit , AfterViewInit{
       console.log(data);
       this.preguntas = data;
       this.pregunts(this.preguntas);
+      const JSON_string = JSON.stringify(data);
+        this.CS.set('preguntas',JSON_string);
       for(const val of this.preguntas){
         console.log(val);
       }

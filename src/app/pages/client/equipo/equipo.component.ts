@@ -31,10 +31,12 @@ export class EquipoComponent implements OnInit {
   constructor(private CS: CookieService, private router: Router) { }
 
   ngOnInit(): void {
-    const coockie = this.CS.get('equipo');
-    const JSobj = JSON.parse(coockie);
-    this.equipo = JSobj;
-    console.log(this.equipo);
+    if(this.CS.get('equipo')){
+      const coockie = this.CS.get('equipo');
+      const JSobj = JSON.parse(coockie);
+      this.equipo = JSobj;
+      console.log(this.equipo);
+    }
     let actual = new Date();
     let dia = `${actual.getUTCFullYear()}-` + `${actual.getUTCMonth()+1}-` + `${actual.getUTCDay()-1}`;
     this.dia = dia;
