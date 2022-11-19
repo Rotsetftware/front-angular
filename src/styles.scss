@@ -1,1 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+// Set your brand colors
+$purple: #8A4D76;
+$pink: #FA7C91;
+$brown: #757763;
+$beige-light: #D0D1CD;
+$beige-lighter: #EFF0EB;
+$green-uabc: #048c3a;
+$yellow-uabc: #ffb502;
+$purple-uabc: #9b4ead;
+$pink-uabc: #cc3366;
+/* ESCALA DE VERDES */
+$green-100: #048c3a;
+$green-75: #3f956f;
+$gren-50: #7fbaa1;
+$green-25: #c0dbce;
+/* ESCALA DE AMARILLOS */
+$yellow-100: #ffb502;
+$yellow-75: #ffb502;
+$yellow-50: #fedf88;
+$yellow-25: #ffedc3;
+/* ESCALA DE GRISES */
+$Black-100: #000000;
+$Black-Text: #ffedc3;
+$Grey-1: #222222;
+$Grey-2: #212529;
+$GreyLight: #565a5c;
+$BG-Inputs: #e9eff2;
+$color-white: #fff;
+
+/* xx| */
+$family-sans-serif: "Montserrat", sans-serif;
+$grey-dark: $brown;
+$grey-light: $beige-light;
+$primary: $green-100;
+$link: $pink;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+// Update some of Bulma's component variables
+$body-background-color: $beige-lighter;
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+
+// Import only what you need from Bulma
+@import "../node_modules/bulma/sass/utilities/_all.sass";
+@import "../node_modules/bulma/sass/base/_all.sass";
+@import "../node_modules/bulma/sass/elements/button.sass";
+@import "../node_modules/bulma/sass/elements/container.sass";
+@import "../node_modules/bulma/sass/elements/title.sass";
+@import "../node_modules/bulma/sass/form/_all.sass";
+@import "../node_modules/bulma/sass/components/navbar.sass";
+@import "../node_modules/bulma/sass/layout/hero.sass";
+@import "../node_modules/bulma/sass/layout/section.sass";
