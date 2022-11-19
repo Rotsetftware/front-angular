@@ -31,7 +31,7 @@ export class JugandoComponent implements OnInit, OnDestroy {
   orden: any;
 
   ngOnDestroy(): void {
-    this.SWS.disconnect();
+    // this.SWS.disconnect();
   }
 
   constructor(private SWS: SocketService, private AR: ActivatedRoute, private CS: CookieService, private API: ApiService, private router: Router) {

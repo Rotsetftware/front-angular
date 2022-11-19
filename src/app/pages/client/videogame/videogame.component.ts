@@ -35,7 +35,6 @@ export class VideogameComponent implements OnInit , AfterViewInit, OnDestroy{
   }
 
   ngOnDestroy(): void {
-    this.SC.disconnect();
   }
 
   private render(): any {

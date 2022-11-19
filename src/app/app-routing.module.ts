@@ -14,8 +14,23 @@ import { EquipoComponent } from './pages/client/equipo/equipo.component';
 import { ComienzajuegoComponent } from './pages/client/comienzajuego/comienzajuego.component';
 import { VideogameComponent } from './pages/client/videogame/videogame.component';
 import { EstadisticasComponent } from './cliente/estadisticas/estadisticas.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegistroComponent } from './auth/registro/registro.component';
+import { WelcomeComponent } from './pages/welcome/welcome.component';
 
 const routes: Routes = [
+  {
+    path: 'welcome',
+    component: WelcomeComponent
+  },
+  {
+    path: 'registro',
+    component: RegistroComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
   {
     path: 'estadisticas',
     component: EstadisticasComponent
@@ -71,7 +86,7 @@ const routes: Routes = [
   {
     path: '**',
     pathMatch: 'full',
-    redirectTo: 'home'
+    redirectTo: 'welcome'
   }
 ];
 

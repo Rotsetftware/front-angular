@@ -1,0 +1,97 @@
+<p>registro works!</p>
+<hr>
+<section id="hero">
+
+    <div class="container">
+        <div class="p-5 col-6 offset-3" align="center">
+            <div class="card ">
+                <div class="card-header text-center">
+                    <h3 class="fw-bold">Crear cuenta</h3>
+                </div>
+                <div class="card-body">
+                    <form autocomplete="off" [formGroup]="miFormulario">
+                        <div class="mb-3 row justify-content-md-center" align="center">
+                            <div class="col-12">
+                                <label class="form-label fw-bold">Nombres:</label>
+                                <input type="text" class="form-control" formControlName="nombres"
+                                    placeholder="Ingrese su nombre de usuario">
+                                <span *ngIf="campoValido('nombres')" class="form-text text-danger">
+                                    Campo obligatorio</span>
+                                <!-- <span class="form-text text-danger">Mínimo 4 letras</span>  -->
+                            </div>
+                        </div>
+                        <div class="mb-3 row justify-content-md-center" align="center">
+                            <div class="col-12">
+                                <label class="form-label fw-bold">Apellidos:</label>
+                                <input type="text" class="form-control" formControlName="apellidos"
+                                    placeholder="Ingrese su nombre de usuario">
+                                <span *ngIf="campoValido('apellidos')" class="form-text text-danger">
+                                    Campo obligatorio</span>
+                                <!-- <span class="form-text text-danger">Mínimo 4 letras</span>  -->
+                            </div>
+                        </div>
+                        <div class="mb-3 row justify-content-md-center" align="center">
+                            <div class="col-12">
+                                <label class="form-label fw-bold">Correo:</label>
+                                <input type="email" class="form-control" formControlName="correo"
+                                    placeholder="Ingrese su correo electronico" [pattern]="emailCheck">
+                                <div>
+                                    <span *ngIf="emailReq()" class="form-text text-danger">
+                                        Dirección de correo no válida</span>
+                                </div>
+                                <span *ngIf="emailPattern()" class="form-text text-danger">
+                                    Patrón incorrecto</span>
+                            </div>
+                        </div>
+                        <div class="mb-3 row justify-content-md-center" align="center">
+                            <div class="col-12">
+                                <label class="form-label fw-bold">Matricula:</label>
+                                <input type="text" class="form-control" formControlName="matricula"
+                                    placeholder="Ingrese su nombre de usuario">
+                                <span *ngIf="campoValido('matricula')" class="form-text text-danger">
+                                    Campo obligatorio</span>
+                                <!-- <span class="form-text text-danger">Mínimo 4 letras</span>  -->
+                            </div>
+                        </div>
+                        <div class="mb-3 row justify-content-md-center" align="center">
+                            <div class="col-12">
+                                <label class="form-label fw-bold">Contraseña:</label>
+                                <input type="password" class="form-control" formControlName="password"
+                                    placeholder="Ingrese su contraseña">
+                                <span class="form-text text-danger" *ngIf="campoValido('password')">Mínimo 8
+                                    caracteres</span>
+                            </div>
+                        </div>
+                        <div class="mb-3 row justify-content-md-center" align="center">
+                            <div class="col-12">
+                                <label class="form-label fw-bold">Confirma tu contraseña:</label>
+                                <input type="password" class="form-control" formControlName="confirmPassword"
+                                    placeholder="Confirme su contraseña">
+                                <div [hidden]="passReq()">
+                                    <span class="form-text text-danger" *ngIf="campoValido('confirmPassword')">La contraseña
+                                        no coinciden</span>
+                                </div>
+                                <span *ngIf="passReq()" class="form-text text-danger">
+                                    Este campo es requerido</span>
+                            </div>
+                        </div>
+                        <div class="mb-3 row text-center">
+                            <div class="col">
+                                <button type="submit" [disabled]="miFormulario.invalid" class="btn  btn-primary btn-lg"
+                                    (click)="save()">
+                                    Guardar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mb-3 row text-center">
+                            <div class="col">
+                                Ya tienes cuenta? <a [routerLink]="['/login']">Click aquí</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </section><!-- End Hero -->

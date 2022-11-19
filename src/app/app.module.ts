@@ -24,6 +24,10 @@ import { PreplayComponent } from './client/preplay/preplay.component';
 import { RankComponent } from './cliente/rank/rank.component';
 import { FinaljuegoComponent } from './cliente/finaljuego/finaljuego.component';
 import { EstadisticasComponent } from './cliente/estadisticas/estadisticas.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegistroComponent } from './auth/registro/registro.component';
+import { WelcomeComponent } from './pages/welcome/welcome.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -45,7 +49,10 @@ import { EstadisticasComponent } from './cliente/estadisticas/estadisticas.compo
     PreplayComponent,
     RankComponent,
     FinaljuegoComponent,
-    EstadisticasComponent
+    EstadisticasComponent,
+    LoginComponent,
+    RegistroComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +62,7 @@ import { EstadisticasComponent } from './cliente/estadisticas/estadisticas.compo
     FormsModule,
     
   ],
-  providers: [CookieService],
+  providers: [CookieService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

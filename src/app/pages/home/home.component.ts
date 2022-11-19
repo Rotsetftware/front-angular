@@ -16,6 +16,10 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router, private CS: CookieService) { }
   
   ngOnInit(): void {
+    this.CS.delete('idPreguntas');
+    this.CS.delete('orden');
+    this.CS.delete('preguntas');
+    this.CS.delete('room');
   }
 
   sala = () => {
