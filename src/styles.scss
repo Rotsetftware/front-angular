@@ -27,13 +27,14 @@ $Grey-1: #222222;
 $Grey-2: #212529;
 $GreyLight: #565a5c;
 $BG-Inputs: #e9eff2;
-$color-white: #fff;
+$color-white: #FBFBFB;
 
 /* xx| */
 $family-sans-serif: "Montserrat", sans-serif;
 $grey-dark: $Black-100;
 $grey-light: $beige-light;
-$primary: $green-100;
+$warning: $yellow-100;
+$primary: $green-uabc;
 $link: $pink;
 $widescreen-enabled: false;
 $fullhd-enabled: false;
@@ -44,6 +45,12 @@ $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
 
+/* .hero{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+        background-image: url(https://scontent-qro1-2.xx.fbcdn.net/v/t39.30808-6/289244160_1178167859695847_5327280171728019674_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeH1VctOMXgnjJT6KfXSi5QcgMBXrOdRWRWAwFes51FZFQOB4paDMuJyYSITxU7JASVOu_-WWoXfV8kBYxLfjAut&_nc_ohc=fjl0uEDMMGgAX9tyh-H&_nc_ht=scontent-qro1-2.xx&oh=00_AfANIlimMrfnRsYO6xZcwcy1O-tOg7NAuczXFCNluHCxzQ&oe=637E45F7);
+} */
 // Import only what you need from Bulma
 @import "../node_modules/bulma/sass/utilities/_all.sass";
 @import "../node_modules/bulma/sass/base/_all.sass";
