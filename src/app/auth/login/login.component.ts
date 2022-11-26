@@ -61,7 +61,8 @@ export class LoginComponent implements OnInit {
           this.CS.set('matricula', data.matricula);
           this.CS.set('tipoUsuario', data.tipoUsuario);
           this.CS.set('correo', data.correo);
-          this.router.navigate(['/welcome']);
+          this.CS.set('img', data.img);
+          this.router.navigate(['/home']);
         }
       });
     }

@@ -1,0 +1,19 @@
+<app-navuser></app-navuser>
+<hr>
+<!--- DEFINIER COMPONENTE DE FILE-->
+<section>
+    <div class="forms">
+        <label for="title">{{msn}}</label>
+        <input type="file" name="file" (change)="subiendoando($event)" accept="image/*" *ngIf="!loader" />
+        <div *ngIf="loader">
+            <img src="./assets/loading.gif" />
+        </div>
+        <!-- <div class="img" *ngIf="trueimg">
+            <img src="{{myimg.url}}" />
+        </div> -->
+    </div>
+    <div class="imagenes">
+        <!-- <app-imagenes></app-imagenes> -->
+    </div>
+
+</section>

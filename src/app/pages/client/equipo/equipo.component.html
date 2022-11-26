@@ -1,6 +1,4 @@
-<h2>Crear equipo</h2>
-<hr>
-
+<app-navuser></app-navuser>
 <form (ngSubmit)="save()" #miFormulario="ngForm">
     <div class="mb-3 row">
         <label class="col-sm-3 col-form-label">Equipo</label>
@@ -65,10 +63,16 @@
     </div>
 </form>
 
-<div>
+<!-- <div>
     <hr>
     <h4>Equipo:</h4>
-    <p>
-        {{equipo | json}}
-    </p>
-</div>
+    <div>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-1 p-3" *ngFor="let item of equipo.matriculas">
+                    <button type="button" class="btn btn-success btn-sm">{{item.matricula}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->

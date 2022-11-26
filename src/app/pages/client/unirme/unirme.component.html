@@ -1,8 +1,8 @@
-<h2>Unirme a una sala</h2>
-<hr>
-<form>
-    <input type="text" [(ngModel)]="room.codigo" name="codigo">
-    <button (click)="unirse()"> Ingresar</button>
+<app-navuser></app-navuser>
+<h3 class="titulo">Unirme a una sala</h3>
+<form class="col-6">
+    <input class="form-control" type="text" [(ngModel)]="room.codigo" name="codigo">
+    <button class="btn btn-success" (click)="unirse()"> Ingresar</button>
 </form>
 <hr>
 {{datas | json}}

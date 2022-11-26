@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-lg navs">
+    <div class="container-fluid">
+        <a class="navbar-brand title" [routerLink]="['/home']">FarmacoGame</a>
+        <a class="nav-link active" aria-current="page" [routerLink]="['/home']">Home</a>
+        <a class="nav-link active" aria-current="page" [routerLink]="['/biblioteca']">Biblioteca</a>
+        <a class="nav-link active" aria-current="page" [routerLink]="['/historial']">Historial</a>
+        <a class="nav-link active" aria-current="page" [routerLink]="['/perfil']">Perfil</a>
+        <div>
+            <button class="btn btn1" [routerLink]="['/equipo']">Jugar</button>
+            <button class="btn btn2" (click)="salir()">Salir</button>
+        </div>
+    </div>
+</nav>

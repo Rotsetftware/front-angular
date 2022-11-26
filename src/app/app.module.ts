@@ -28,6 +28,19 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegistroComponent } from './auth/registro/registro.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { WindowComponent } from './components/window/window.component';
+import { NavantesComponent } from './shared/navantes/navantes.component';
+import { NavuserComponent } from './shared/navuser/navuser.component';
+import { NavadminComponent } from './shared/navadmin/navadmin.component';
+import { PerfilComponent } from './pages/client/perfil/perfil.component';
+import { HistorialComponent } from './pages/client/historial/historial.component';
+import { BibliotecaComponent } from './pages/client/biblioteca/biblioteca.component';
+import { EditarPerfilComponent } from './pages/client/editar-perfil/editar-perfil.component';
+import { ImagenesComponent } from './pages/client/imagenes/imagenes.component';
+import { RecuperarComponent } from './auth/recuperar/recuperar.component';
+import { CodigoComponent } from './auth/codigo/codigo.component';
+import { RestaurarComponent } from './auth/restaurar/restaurar.component';
+import { NavjuegoComponent } from './shared/navjuego/navjuego.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +65,20 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     EstadisticasComponent,
     LoginComponent,
     RegistroComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    WindowComponent,
+    NavantesComponent,
+    NavuserComponent,
+    NavadminComponent,
+    PerfilComponent,
+    HistorialComponent,
+    BibliotecaComponent,
+    EditarPerfilComponent,
+    ImagenesComponent,
+    RecuperarComponent,
+    CodigoComponent,
+    RestaurarComponent,
+    NavjuegoComponent
   ],
   imports: [
     BrowserModule,

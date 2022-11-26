@@ -1,12 +1,142 @@
-<p>home works!</p>
-<hr>
+<app-navuser></app-navuser>
+<div>
+    <!--Contenedor para introducir el codigo-->
+    <div class="row ">
+        <div class="col-4 conten">
+            <button type="button" class="btn btn-success" (click)="unir()">Crear equipo</button>
+            <!-- <div class="row">
+                <p>Introduce el codigo para jugar</p>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <input type="text" placeholder="#Codigo de partida">
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-success">Unirme</button>
+                </div>
+            </div> -->
+        </div>
+        <!--Fin de contenedor para introducir codigo-->
+
+        <!--Contenedor de usuario-->
+        <div class="col-4 conten">
+            <div class="row">
+                <div class="col-3">
+                    <img src="{{img}}" alt="foto">
+                </div>
+                <div class="col-7">
+                    <div class="row">
+                        <h3>{{nombres + ' ' + apellidos}}</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-5">
+                            <button class="btn btn-success" [routerLink]="['/perfil']"> Ver perfil</button>
+                        </div>
+                        <div class="col-5">
+                            <a [routerLink]="['/editar-perfil']">Editar perfil</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Fon de contenedor de usuario-->
+    </div>
+
+    <!--Inicio de primer fila de temas-->
+    <div class="row tems">
+        <div class="col-6">
+            <h3>Temas disponibles</h3>
+        </div>
+        <div class="col-6 cursos">
+            <a href="">Mas cursos ---></a>
+        </div>
+    </div>
+
+    <div class="row cards">
+        <div class="col-3" *ngFor="let item of juegos">
+            <div class="card" style="width: 18rem; min-height: 14rem;">
+                <img src="" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.juego}}</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a class="btn_link" type="button" [routerLink]="['/biblioteca']">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Fin de primer fila de temas-->
+
+
+    <!--Inicio de segunda fila de temas-->
+    <!-- <div class="row tems">
+        <div class="col-6">
+            <h3>Ingles</h3>
+        </div>
+        <div class="col-6 cursos">
+            <a href="">Mas cursos</a>
+        </div>
+    </div>
+
+    <div class="row cards">
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img src="" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img src="" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img src="" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img src="" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!--Fin de segunda fila de temas-->
+
+</div>
+<!-- <hr> -->
+<!-- <p>home works!</p> -->
+<!-- <hr> -->
 <!-- <button type="button" [routerLink]="['/login']">Iniciar sesión</button> -->
 <!-- <hr> -->
-<button type="button" (click)="nivel()">Niveles</button>
+<!-- <button type="button" (click)="nivel()">Niveles</button> -->
 <!-- <hr>
 <form>
     <input type="text" [(ngModel)]="room.codigo" name="codigo">
     <button (click)="unirse()"> Ingresar</button>
 </form> -->
-<hr>
-<button type="button" (click)="unir()">Crear equipo</button>
+<!-- <hr> -->

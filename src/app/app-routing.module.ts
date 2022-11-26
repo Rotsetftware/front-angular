@@ -17,8 +17,54 @@ import { EstadisticasComponent } from './cliente/estadisticas/estadisticas.compo
 import { LoginComponent } from './auth/login/login.component';
 import { RegistroComponent } from './auth/registro/registro.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
+import { WindowComponent } from './components/window/window.component';
+import { TokenGuard } from './guards/token.guard';
+import { PerfilComponent } from './pages/client/perfil/perfil.component';
+import { HistorialComponent } from './pages/client/historial/historial.component';
+import { BibliotecaComponent } from './pages/client/biblioteca/biblioteca.component';
+import { EditarPerfilComponent } from './pages/client/editar-perfil/editar-perfil.component';
+import { ImagenesComponent } from './pages/client/imagenes/imagenes.component';
+import { RecuperarComponent } from './auth/recuperar/recuperar.component';
+import { CodigoComponent } from './auth/codigo/codigo.component';
+import { RestaurarComponent } from './auth/restaurar/restaurar.component';
 
 const routes: Routes = [
+  {
+    path: 'restaurar',
+    component: RestaurarComponent
+  },
+  {
+    path: 'codigo',
+    component: CodigoComponent
+  },
+  {
+    path: 'recuperar',
+    component: RecuperarComponent
+  },
+  {
+    path: 'imagenes',
+    component: ImagenesComponent
+  },
+  {
+    path: 'editar-perfil',
+    component: EditarPerfilComponent
+  },
+  {
+    path: 'biblioteca',
+    component: BibliotecaComponent
+  },
+  {
+    path: 'historial',
+    component: HistorialComponent
+  },
+  {
+    path: 'perfil',
+    component: PerfilComponent
+  },
+  {
+    path: 'windows',
+    component: WindowComponent
+  },
   {
     path: 'welcome',
     component: WelcomeComponent
@@ -37,7 +83,8 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [TokenGuard]
   },
   {
     path: 'sala/:room',

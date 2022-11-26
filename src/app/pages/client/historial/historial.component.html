@@ -1,0 +1,163 @@
+<app-navuser></app-navuser>
+<!--Inicio primer contenedor (verde)-->
+<div class="conten">
+    <div class="seConten">
+        <h1>HISTORIAL</h1>
+        <br>
+        <p>Mira tu desempeño en los juegos</p>
+        <br>
+        <!-- <div class="row">
+            <div class="col-3">
+                <a href="">option</a>
+            </div>
+            <div class="col-3">
+                <a href="">option</a>
+            </div>
+            <div class="col-3">
+                <a href="">option</a>
+            </div>
+            <div class="col-3">
+                <a href="">option</a>
+            </div>
+        </div> -->
+    </div>
+</div>
+<!--Fin primer contenedor (verde)-->
+
+<!--Inicio Segunda fila-->
+<div class="content">
+    <div class="row" align="center">
+        <div class="col-10 Wbox">
+            <div class="row">
+                <div class="col-3">
+                    <h1>{{total | number: '1.0-0'}}%</h1>
+                    <h3>Precisión</h3>
+                </div>
+                <div class="col-3">
+                    <h1>{{puntuacion}}</h1>
+                    <h3>Puntos Totales</h3>
+                </div>
+                <div class="col-3">
+                    <h3>Bien jugado</h3>
+                    <p>Text for relleno</p>
+                    <button class="btn btn-success" [routerLink]="['/biblioteca']">Vamos a mejorar</button>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-3 Wbox">
+            <div class="row">
+                <div class="col-8">
+                    <p>Jugadores</p>
+                </div>
+                <div class="col-4">
+                    <p>Icon X</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <p>Jugadores</p>
+                </div>
+                <div class="col-4">
+                    <p>Icon X</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <p>Jugadores</p>
+                </div>
+                <div class="col-4">
+                    <p>Icon X</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-2 Wbox"> 
+            <div class="row">
+                <button class="btn btn-success btn-lg">Ver podium</button>
+            </div>
+            <br>
+            <div class="row">
+                <button class="btn btn-success btn-lg">Compartir</button>
+            </div>
+        </div> -->
+    </div>
+</div>
+<!--Fin Segunda fila-->
+
+<!--Inicio Tercera fila-->
+<!-- <div class="">
+    <div class="row">
+        <div class="col-3 contents Wbox">
+            <div class="row">
+                <div class="col-9">
+                    <div class="row"> <p>Seguidores</p></div>
+                <div class="row"> <h3>Nombre de usuario</h3></div>
+                </div>
+                <div class="col-3">
+                    <h2>img</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-3 contents Wbox">
+            <div class="row">
+                <div class="col-9">
+                    <div class="row"> <p>Seguidores</p></div>
+                <div class="row"> <h3>Nombre de usuario</h3></div>
+                </div>
+                <div class="col-3">
+                    <h2>img</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<!--Fin tercera fila-->
+
+<!--Inicio Inputs de busqueda-->
+<!-- <div class="searchs">
+    <div class="row">
+        <div class="col-2">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        </div>
+        <div class="col-2">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        </div>
+        <div class="col-2">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        </div>
+    </div>
+</div> -->
+<!--Fin Inputs de busqueda-->
+
+<!--Inicio Tabla-->
+<div class="tabl3">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Fecha</th>
+                <th scope="col">Nivel</th>
+                <th scope="col">Juego</th>
+                <th scope="col">Equipo</th>
+                <th scope="col">Sala</th>
+                <th scope="col">Correctas</th>
+                <th scope="col">Incorrectas</th>
+                <th scope="col">Puntuación</th>
+                <th scope="col">Precisión</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of historial">
+                <th scope="row">{{item.fecha | date}}</th>
+                <td *ngFor="let item2 of niveles" [hidden]="item.idNivel != item2.idNivel">{{item2.nivel}}</td>
+                <td *ngFor="let item3 of juegos" [hidden]="item.idJuego != item3.idJuego">{{item3.juego}}</td>
+                <td>{{item.equipo}}</td>
+                <td>{{item.sala}}</td>
+                <td>{{item.correctas}}</td>
+                <td>{{item.incorrectas}}</td>
+                <td>{{item.puntajeTotal}}</td>
+                <td *ngIf="item.correctas+item.incorrectas != 0">{{ item.correctas * 100 / (item.correctas+item.incorrectas) | number: '1.0-0' }}%</td>
+                <td *ngIf="item.correctas+item.incorrectas == 0">0%</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!--Fon Tabla-->

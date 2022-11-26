@@ -43,8 +43,7 @@ export class ApiService {
     return this.http.post(`${this.URL}/historial/create`,form);
   }
   
-  getHistorial(sala: any){
-    return this.http.get<Nivel>(`${this.URL}/historial/${sala}`);
+  getHistorial(matricula: any){
+    return this.http.get<Nivel>(`${this.URL}/historial/${matricula}`);
   }
-
 }

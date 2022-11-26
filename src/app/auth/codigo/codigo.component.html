@@ -1,0 +1,49 @@
+<app-navantes></app-navantes>
+<div class="container">
+    <div class="p-5 col-6 offset-3" align="center">
+      <div class="card">
+        <div class="card-header text-center titulo-card">
+          <img src="./assets/img/logo.png" alt="bitmx" class="bitmx"/>
+        </div>
+        <div class="card-body">
+          <form autocomplete="off" [formGroup]="miFormulario">
+            <div class="mb-3 row justify-content-md-center" align="center">
+                <div class="col-12">
+                    <label class="form-label fw-bold">Confirma tu correo electronico</label>
+                    <p>¡Último paso! Para proteger tu cuenta, escribe el código que te enviamos a {{correo}}</p>
+                </div>
+            </div>
+            <div class="mb-3 row justify-content-md-center">
+              <div class="col-12">
+                <label class="form-label fw-bold">Codigo:</label>
+                <input type="text" class="form-control" formControlName="codigo"
+                        placeholder="Ingrese su nombre de usuario">
+                    <span *ngIf="campoValido('codigo')" class="form-text text-danger">
+                        Campo obligatorio</span>
+                    <!-- <span class="form-text text-danger">Mínimo 4 letras</span>  -->
+                </div>
+            </div>
+
+            <div class="mb-3 row text-center">
+              <div class="col">
+                <button
+                  type="submit"
+                  [disabled]="miFormulario.invalid"
+                  class="btn btn-primary btn-lg"
+                  (click)="save()"
+                >
+                  Enviar
+                </button>
+              </div>
+            </div>
+            <div class="mb-3 row text-center">
+              <div class="col">
+                No recibiste el código?
+                <a [routerLink]="['/restaurar']">Click aquí</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

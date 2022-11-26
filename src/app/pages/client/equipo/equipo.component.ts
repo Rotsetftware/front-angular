@@ -37,9 +37,6 @@ export class EquipoComponent implements OnInit {
       this.equipo = JSobj;
       console.log(this.equipo);
     }
-    let actual = new Date();
-    let dia = `${actual.getUTCFullYear()}-` + `${actual.getUTCMonth()+1}-` + `${actual.getUTCDay()-1}`;
-    this.dia = dia;
   }
 
   unirse(){
@@ -61,7 +58,6 @@ export class EquipoComponent implements OnInit {
   }
 
   save(){
-    this.equipo.fecha = this.dia;
     console.log(this.equipo);
     const JSON_string = JSON.stringify(this.equipo);
     this.CS.set('equipo',JSON_string);
@@ -73,11 +69,17 @@ export class EquipoComponent implements OnInit {
   }
 
   addHab(){
-    const newHab: Matricula = {
-      id: this.equipo.matriculas.length + 1,
-      matricula: this.newHab
+  const result = this.equipo.matriculas.filter( (n: any, i: any) =>{ return n.matricula == this.newHab;})
+  console.log(result);  
+  if(result.length > 0){
+    alert('Registrado');
+    }else{
+      const newHab: Matricula = {
+        id: this.equipo.matriculas.length + 1,
+        matricula: this.newHab
+      }
+      this.equipo.matriculas.push({...newHab});
+      this.newHab = '';
     }
-    this.equipo.matriculas.push({...newHab});
-    this.newHab = '';
   }
 }
