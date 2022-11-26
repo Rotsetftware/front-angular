@@ -1,12 +1,25 @@
-<nav class="navbar navbar-expand-lg navs">
-    <div class="container-fluid">
-        <a class="navbar-brand title">FarmacoGame</a>
-        <!-- <a class="nav-link active" aria-current="page" [routerLink]="['/home']">Home</a> -->
-        <!-- <a class="nav-link active" aria-current="page" [routerLink]="['/biblioteca']">Biblioteca</a> -->
-        <!-- <a class="nav-link active" aria-current="page" [routerLink]="['/historial']">Historial</a> -->
-        <!-- <a class="nav-link active" aria-current="page" [routerLink]="['/perfil']">Perfil</a> -->
-        <div>
-            <button class="btn btn2" (click)="salir()">Salir del juego</button>
+<!-- BARRA DE NAVEGACIÓN -->
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item has-text-weight-bold has-text-primary is-size-5 ">
+            <img src="./../../../assets/img/xd.png" width="25" height="50"> FarmacoGame
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+    <div id="navbarBasicExample" class="navbar-menu has-text-weight-semibold 		">
+        <div class="navbar-end has-text-primary">
+            <div class="navbar-item">
+                <div class="buttons">
+                    <!-- <button class="button is-success has-text-weight-medium" [routerLink]="['/login']">Iniciar Sesión</button> -->
+                    <!-- <button class="button is-primary is-light has-text-primary has-text-weight-medium	">Acerca De</button> -->
+                    <button class="button is-primary is-light has-text-primary has-text-weight-medium"
+                        (click)="salir()">Salir del juego</button>
+                </div>
+            </div>
         </div>
     </div>
 </nav>

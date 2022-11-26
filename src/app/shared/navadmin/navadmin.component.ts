@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/providers/auth.service';
 
 @Component({
   selector: 'app-navadmin',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavadminComponent implements OnInit {
 
-  constructor() { }
+  constructor(private AS: AuthService) { }
 
   ngOnInit(): void {
+  }
+
+  salir(){
+    this.AS.cerrarSesion();
   }
 
 }

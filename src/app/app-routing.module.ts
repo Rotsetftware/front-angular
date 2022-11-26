@@ -27,8 +27,28 @@ import { ImagenesComponent } from './pages/client/imagenes/imagenes.component';
 import { RecuperarComponent } from './auth/recuperar/recuperar.component';
 import { CodigoComponent } from './auth/codigo/codigo.component';
 import { RestaurarComponent } from './auth/restaurar/restaurar.component';
+import { InicioComponent } from './pages/admin/inicio/inicio.component';
+import { EstadisticasGeneralesComponent } from './pages/admin/estadisticas-generales/estadisticas-generales.component';
+import { PerfilesComponent } from './pages/admin/perfiles/perfiles.component';
+import { PerfilAdminComponent } from './pages/admin/perfil-admin/perfil-admin.component';
 
 const routes: Routes = [
+  {
+    path: 'perfil-admin',
+    component: PerfilAdminComponent
+  },
+  {
+    path: 'perfiles',
+    component: PerfilesComponent
+  },
+  {
+    path: 'estadisticas-generales',
+    component: EstadisticasGeneralesComponent
+  },
+  {
+    path: 'inicio',
+    component: InicioComponent
+  },
   {
     path: 'restaurar',
     component: RestaurarComponent

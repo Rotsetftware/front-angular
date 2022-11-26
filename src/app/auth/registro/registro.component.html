@@ -48,7 +48,7 @@
                         <span *ngIf="passReq()" class="form-text text-danger">Este campo es requerido</span>
                         <!--Botón para almacenar info e iniciar sesión-->
                         <div class="d-grid gap-2 col-md-8">
-                            <button class="btn btn-success" type="button">Crear cuenta</button>
+                            <button class="btn btn-success" type="submit" (click)="save()">Crear cuenta</button>
                         </div>
                     </div>
                 </form>

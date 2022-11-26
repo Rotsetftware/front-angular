@@ -3,12 +3,11 @@ import { CookieService } from 'ngx-cookie-service';
 import { ApiService } from 'src/app/providers/api.service';
 
 @Component({
-  selector: 'app-historial',
-  templateUrl: './historial.component.html',
-  styleUrls: ['./historial.component.scss']
+  selector: 'app-perfiles',
+  templateUrl: './perfiles.component.html',
+  styleUrls: ['./perfiles.component.scss']
 })
-export class HistorialComponent implements OnInit {
-
+export class PerfilesComponent implements OnInit {
   matricula: any;
   historial: any;
   precision: any = [];
@@ -22,9 +21,18 @@ export class HistorialComponent implements OnInit {
 
   ngOnInit(): void {
    this.matricula = this.CS.get('matricula');
-   this.getHistorialUser();
+  //  this.getHistorialUser();
    this.getJuegos();
    this.getNiveles();
+   this.getHistorial();
+   
+  }
+
+  getHistorial(){
+    this.api.getHistoriales().subscribe((data: any) => {
+      console.log(data);
+      this.historial = data;
+    });
   }
 
   getNiveles(){

@@ -52,6 +52,7 @@ export class JugandoComponent implements OnInit, OnDestroy {
       }else if(rank){
         this.rank = true;
       } else if(data){
+        this.sala = false;
         this.rank = false;
 
         for(const val of this.xd){

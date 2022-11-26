@@ -62,7 +62,11 @@ export class LoginComponent implements OnInit {
           this.CS.set('tipoUsuario', data.tipoUsuario);
           this.CS.set('correo', data.correo);
           this.CS.set('img', data.img);
-          this.router.navigate(['/home']);
+          if(data.tipoUsuario == 2){
+            this.router.navigate(['/home']);
+          }else if(data.tipoUsuario == 1){
+            this.router.navigate(['/inicio']);
+          }
         }
       });
     }

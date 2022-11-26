@@ -1,0 +1,43 @@
+<app-navadmin></app-navadmin>
+<div class="container py-5">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-3" align="center">
+                <img src="{{usuario.img}}" alt="" class="img"><br><br>
+                <a [routerLink]="['/editar-perfil']">Cambiar foto del perfil</a>
+            </div>
+            <div class="col-9">
+                    <h3 class="perfil-titulo" align="center">
+                        Información personal
+                    </h3>
+                    <div class="row p-1">
+                        <div class="col-2" align="center">
+                            <label class="form-label">Nombre:</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="email" class="form-control" value="{{usuario.nombre}}" disabled/>
+                        </div>
+                    </div>
+                    <div class="row p-1">
+                        <div class="col-2" align="center">
+                            <label class="form-label">Email:</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="email" class="form-control" value="{{usuario.correo}}" disabled/>
+                        </div>
+                    </div>
+                    <div class="row p-1">
+                        <div class="col-2" align="center">
+                            <label class="form-label">Contraseña:</label>
+                        </div>
+                        <div class="col-5">
+                            <input type="email" class="form-control" value="{{usuario.password}}" disabled/>
+                        </div>
+                        <div class="col-3" align="center" (click)="restaurar()">
+                            <a class="link">Cambiar contraseña</a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>

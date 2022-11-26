@@ -8,6 +8,8 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class EstadisticasComponent implements OnInit {
 
+  id: any;
+
   constructor(private CS: CookieService) { }
 
   ngOnInit(): void {
@@ -15,6 +17,7 @@ export class EstadisticasComponent implements OnInit {
     this.CS.delete('orden');
     this.CS.delete('preguntas');
     this.CS.delete('room');
+    this.id = this.CS.get('tipoUsuario');
   }
 
 }

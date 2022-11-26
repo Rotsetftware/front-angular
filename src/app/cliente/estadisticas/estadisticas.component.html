@@ -1,3 +1,4 @@
 <p>estadisticas works!</p>
 <hr>
-<button type="button"><a [routerLink]="['/home']">Home</a></button>
+<button *ngIf="id == 2" type="button"><a [routerLink]="['/home']">Home</a></button>
+<button *ngIf="id == 1" type="button"><a [routerLink]="['/inicio']">Inicio</a></button>
