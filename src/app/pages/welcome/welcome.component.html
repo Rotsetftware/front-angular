@@ -8,7 +8,9 @@
                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem eius nulla magni inventore! Libero, error doloremque dolor quod sed optio autem voluptatum aspernatur praesentium! Porro et beatae qui minima molestias?</p>
                  <div class="form-group">
                     <button [routerLink]="['/registro']" class="btn btn-warning d-inline-block text-light mr-2 mb-3 width-100"><a>Empezar Ahora</a></button>
-                    <button [routerLink]="['/home']" class="btn btn-warning d-inline-block text-light mb-3 width-100"><a>Ya tengo una cuenta</a></button>
+                    <button *ngIf="tipoUsuario == 2" [routerLink]="['/home']" class="btn btn-warning d-inline-block text-light mb-3 width-100"><a>Ya tengo una cuenta</a></button>
+                    <button *ngIf="tipoUsuario == 1" [routerLink]="['/inicio']" class="btn btn-warning d-inline-block text-light mb-3 width-100"><a>Ya tengo una cuenta</a></button>
+                    <button *ngIf="tipoUsuario == 0" [routerLink]="['/login']" class="btn btn-warning d-inline-block text-light mb-3 width-100"><a>Ya tengo una cuenta</a></button>
                 </div>                     
              </div>
         </div>

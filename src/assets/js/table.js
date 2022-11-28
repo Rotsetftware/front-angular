@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#examples').DataTable({
+    $('#examples').dataTable({
       responsive: false,
       "language": {
         "lengthMenu": "Mostrar _MENU_ registros",

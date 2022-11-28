@@ -1,1 +1,89 @@
 <app-navadmin></app-navadmin>
+<!--Inicio Tabla-->
+<div class="container">
+  <div class="card m-5 p-3">
+      <table class="table table-bordered table-striped table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Fecha</th>
+            <th scope="col">Nivel</th>
+            <th scope="col">Juego</th>
+            <th scope="col">Matricula</th>
+            <th scope="col">Equipo</th>
+            <th scope="col">Sala</th>
+            <th scope="col">Correctas</th>
+            <th scope="col">Incorrectas</th>
+            <th scope="col">Puntuación</th>
+            <!-- <th scope="col">Precisión</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of historial">
+            <td scope="row">{{item.fecha | date}}</td>
+            <td *ngFor="let item2 of niveles" [hidden]="item.idNivel != item2.idNivel">{{item2.nivel}}</td>
+            <td *ngFor="let item3 of juegos" [hidden]="item.idJuego != item3.idJuego">{{item3.juego}}</td>
+            <td>{{item.matricula}}</td>
+            <td>{{item.equipo}}</td>
+            <td>{{item.sala}}</td>
+            <td>{{item.correctas}}</td>
+            <td>{{item.incorrectas}}</td>
+            <td>{{item.puntajeTotal}}</td>
+          </tr>
+          <!-- <tr *ngFor="let i of index">
+            <td scope="row">{{historial[i].fecha | date}}</td>
+            <td *ngFor="let item2 of niveles" [hidden]="historial[i].idNivel != item2.idNivel">{{item2.nivel}}</td>
+            <td *ngFor="let item3 of juegos" [hidden]="historial[i].idJuego != item3.idJuego">{{item3.juego}}</td>
+            <td>{{historial[i].matricula}}</td>
+            <td>{{historial[i].equipo}}</td>
+            <td>{{historial[i].sala}}</td>
+            <td>{{historial[i].correctas}}</td>
+            <td>{{historial[i].incorrectas}}</td>
+            <td>{{historial[i].puntajeTotal}}</td>
+      </tr> -->
+        </tbody>
+      </table>
+
+  </div>
+</div>
+
+<!-- <div class="container">
+  <div class="card m-5 p-3">
+      <div class="card-body">
+          <form (submit)="filterById()">
+              <label>
+                  Min
+                  <input type="number" name="min" id="min" [(ngModel)]="min" />
+              </label>
+              <label>
+                  Max
+                  <input type="number" name="max" id="max" [(ngModel)]="max" />
+              </label>
+              <button class="btn btn-primary" type="submit">Filter by ID</button>
+          </form>
+          <br />
+          <table class="table table-bordered table-striped table-hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+              <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Username</th>
+                  <th>Email</th>
+                  <th>Phone number</th>
+                  <th>Address</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let user of allUsers">
+                  <td>{{ user.id }}</td>
+                  <td>{{ user.name }}</td>
+                  <td>{{ user.username }}</td>
+                  <td>{{ user.email }}</td>
+                  <td>{{ user.phone }}</td>
+                  <td>{{ user.address.street }}, {{ user.address.city }}</td>
+              </tr>
+              </tbody>
+          </table>
+      </div>
+
+  </div>
+</div> -->

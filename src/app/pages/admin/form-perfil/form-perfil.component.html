@@ -1,0 +1,55 @@
+<app-navadmin></app-navadmin>
+<div class="container py-5">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-3" align="center">
+                <img src="{{usuario.img}}" alt="" class="img"><br><br>
+                <a (click)="eliminarFoto()">Eliminar foto de perfil</a>
+            </div>
+            <div class="col-9">
+                <form>
+                    <h3 class="perfil-titulo" align="center">
+                        Información personal
+                    </h3>
+                    <div class="row p-1">
+                        <div class="col-2" align="center">
+                            <label class="form-label">Nombre:</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="email" class="form-control" name="nombres" [(ngModel)]="usuario.nombres"/>
+                        </div>
+                    </div>
+                    <div class="row p-1">
+                        <div class="col-2" align="center">
+                            <label class="form-label">Apellidos:</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="email" class="form-control" name="apellidos" [(ngModel)]="usuario.apellidos"/>
+                        </div>
+                    </div>
+                    <div class="row p-1">
+                        <div class="col-2" align="center">
+                            <label class="form-label">Matricula:</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="email" class="form-control" name="matricula" [(ngModel)]="usuario.matricula"/>
+                        </div>
+                    </div>
+                    <div class="row p-1">
+                        <div class="col-2" align="center">
+                            <label class="form-label">Email:</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="email" class="form-control" name="correo" [(ngModel)]="usuario.correo"/>
+                        </div>
+                    </div>
+                    <div class="row p-1" align="center">
+                        <div class="col-6">
+                            <button class="button is-success has-text-weight-medium" (click)="update()">Actualizar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -26,6 +26,14 @@ export class AuthService {
     );
   }
 
+  updateUser(form: any, id: any){
+    return this.http.put(`${this.URL}/users/${id}`, form);
+  }
+  
+  deleteUser(id: any){
+    return this.http.delete(`${this.URL}/users/${id}`);
+  }
+
   cerrarSesion(){
     this.CS.deleteAll();
     this.router.navigate(['/login']);

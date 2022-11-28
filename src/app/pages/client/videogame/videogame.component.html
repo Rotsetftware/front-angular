@@ -1,17 +1,47 @@
+<app-navjuego></app-navjuego>
 <div *ngIf="sala">
-    <h1 align="center">Sala: {{ room }}</h1>
-    <hr />
-    <!-- <input type="text" name="text" value="{{textRes}}" id="textoId" #textoRef> -->
-    <div *ngFor="let user of usuario">
-        <h1>{{ user }}</h1>
+    <p class="fs-1 text-center">Esperando al lider de la sala...</p>
+    <br>
+    <div class="content">
+        <div class="row">
+            <div class="col-8 Wbox">
+                <div class="card m-4">
+                    <h5 class="card-header text-center">Jugadores</h5>
+                    <div class="row">
+                        <div class="card-body col-3" *ngFor="let user of usuario">
+                            <a class="btn btn-success">{{ user }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 Wbox">
+                <div class="card m-4">
+                    <h5 class="card-header text-center">Información de sala</h5>
+                    <h6 class="text-center">Codigo de sala</h6>
+                    <div>
+                        <label class="input-group-text col-10 offset-1" for="inputGroupSelect01">{{ room }}</label><br>
+                        <h6 class="text-center m-1">Comparte el codigo con tus compañeros de juego.<br> Solo el anfitrion de
+                            la sala puede dar comienzo a la partida.</h6>
+                        <div class="card-body">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-    <hr />
-    <button *ngIf="idPreguntas" type="submit" name="boton" id="botonId" (click)="boton()">
-        Jugar
-    </button>
+    <div class="row">
+        <div class="col-12" align="center">
+            <button *ngIf="idPreguntas" type="submit" name="boton" id="botonId" class="btn btn-success w-50" (click)="boton()">
+                Jugar
+            </button>
+        </div>
+    </div>
 </div>
 
-<h1 *ngIf="play">{{tiempoReal}}</h1>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <button type="button" class="btn btn-success m-4 numero" *ngIf="play">{{tiempoReal}}</button>
+</div>
 
 <app-rank *ngIf="rank"></app-rank>
 

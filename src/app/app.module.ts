@@ -45,6 +45,8 @@ import { InicioComponent } from './pages/admin/inicio/inicio.component';
 import { EstadisticasGeneralesComponent } from './pages/admin/estadisticas-generales/estadisticas-generales.component';
 import { PerfilesComponent } from './pages/admin/perfiles/perfiles.component';
 import { PerfilAdminComponent } from './pages/admin/perfil-admin/perfil-admin.component';
+import {DataTablesModule} from 'angular-datatables';
+import { FormPerfilComponent } from './pages/admin/form-perfil/form-perfil.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +88,8 @@ import { PerfilAdminComponent } from './pages/admin/perfil-admin/perfil-admin.co
     InicioComponent,
     EstadisticasGeneralesComponent,
     PerfilesComponent,
-    PerfilAdminComponent
+    PerfilAdminComponent,
+    FormPerfilComponent
   ],
   imports: [
     BrowserModule,
@@ -94,7 +97,7 @@ import { PerfilAdminComponent } from './pages/admin/perfil-admin/perfil-admin.co
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    
+    DataTablesModule
   ],
   providers: [CookieService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]

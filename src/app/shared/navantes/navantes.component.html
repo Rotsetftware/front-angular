@@ -30,9 +30,10 @@
       
         <div class="navbar-item">
           <div class="buttons">
-            <button class="button is-success has-text-weight-medium" [routerLink]="['/login']">Iniciar Sesión</button>
-            <button class="button is-primary is-light has-text-primary has-text-weight-medium	">Acerca De</button>
-  
+            <button *ngIf="tipoUsuario == 2" [routerLink]="['/home']" class="button is-success has-text-weight-medium"><a>Iniciar Sesión</a></button>
+            <button *ngIf="tipoUsuario == 1" [routerLink]="['/inicio']" class="button is-success has-text-weight-medium"><a>Iniciar Sesión</a></button>
+            <button *ngIf="tipoUsuario == 0" [routerLink]="['/login']" class="button is-success has-text-weight-medium"><a>Iniciar Sesión</a></button>
+            <button class="button is-primary is-light has-text-primary has-text-weight-medium" [routerLink]="['/welcome']">Acerca De</button>
           </div>
         </div>
       </div>

@@ -1,11 +1,38 @@
 <app-navjuego></app-navjuego>
 <div *ngIf="sala">
-    <h1 align="center">Sala: {{room}}</h1>
-    <hr>
+    <!-- <h1 align="center">Sala: {{room}}</h1>
+    <hr> -->
     <!-- <input type="text" name="text" value="{{textRes}}" id="textoId" #textoRef> -->
-    <div *ngFor="let user of usuario" class="p-5">
+    <!-- <div *ngFor="let user of usuario" class="p-5">
         <div class="col-3">
             <label class="btn btn-success w-30">{{user}}</label>
+        </div>
+    </div> -->
+    <div class="col-7">
+        <h1 class="titulo">11 Jugadores listos</h1>
+    </div>
+    <div class="row">
+        <div class="col-7 conten">
+            <div class="card players">
+                <div class="card-header" style="background-color:black ; color:white ;">
+                    Players
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" *ngFor="let user of usuario">{{user}}</li>
+                        <!-- <img src="" alt="Cabeza de cimarron"> Si se puede poner la cabeza del cimarron del equipo -->
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-5">
+            <div class="card">
+                <h5 class="card-header">Test de farmacologia 1 (Nombre test)</h5>
+                <div class="card-body">
+                    <h5 class="card-title">#{{room}} (Codigo de la sala)</h5>
+                    <p class="card-text">Espera en lo que entran los demás jugadores, cuando esten todos dentro el administrador podra dar inicio a este</p>
+                    <a href="#" class="btn btn-danger">Salir de sala</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

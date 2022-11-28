@@ -1,0 +1,25 @@
+.circulo {
+	width: 100vh;
+	height: 100vh;
+	border-radius: 50%;
+	background: red;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+  margin:0px auto;
+  padding:3%
+}
+
+.circulo > h2 {
+	font-family: sans-serif;
+	color: white;
+	font-size: 40vh;
+	font-weight: bold;
+}
+
+.pantalla {
+  background-color: yellow;
+  min-width: 100vh;
+	min-height: 100vh;
+}

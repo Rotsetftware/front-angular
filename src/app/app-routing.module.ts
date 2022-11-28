@@ -31,8 +31,13 @@ import { InicioComponent } from './pages/admin/inicio/inicio.component';
 import { EstadisticasGeneralesComponent } from './pages/admin/estadisticas-generales/estadisticas-generales.component';
 import { PerfilesComponent } from './pages/admin/perfiles/perfiles.component';
 import { PerfilAdminComponent } from './pages/admin/perfil-admin/perfil-admin.component';
+import { FormPerfilComponent } from './pages/admin/form-perfil/form-perfil.component';
 
 const routes: Routes = [
+  {
+    path: 'form-perfil/:id',
+    component: FormPerfilComponent
+  },
   {
     path: 'perfil-admin',
     component: PerfilAdminComponent

@@ -50,4 +50,20 @@ export class ApiService {
   getHistoriales(){
     return this.http.get<Nivel>(`${this.URL}/historial/get`);
   }
+  
+  getUsers(){
+    return this.http.get(`${this.URL}/users/get`);
+  }
+  
+  getUserId(id: any){
+    return this.http.get(`${this.URL}/users/${id}`);
+  }
+  
+  getTipoUser(){
+    return this.http.get(`${this.URL}/tipousuario/get`);
+  }
+
+  deleteImg(id: any){
+    return this.http.get(`${this.URL}/users/deleteImg/${id}`);
+  }
 }

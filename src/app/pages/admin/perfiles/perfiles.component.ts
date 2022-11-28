@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, OnDestroy, ViewChild} from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { ApiService } from 'src/app/providers/api.service';
+import {Subject} from 'rxjs';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/providers/auth.service';
 
 @Component({
   selector: 'app-perfiles',
@@ -8,6 +11,9 @@ import { ApiService } from 'src/app/providers/api.service';
   styleUrls: ['./perfiles.component.scss']
 })
 export class PerfilesComponent implements OnInit {
+  
+  tipoUsuario: any;
+  usuarios: any;
   matricula: any;
   historial: any;
   precision: any = [];
@@ -16,22 +22,60 @@ export class PerfilesComponent implements OnInit {
   sumaPuntos = 0;
   total = 0;
   puntuacion = 0;
+  i = 0;
+  formEdit = false;
 
-  constructor(private api: ApiService, private CS: CookieService) { }
+  constructor(private api: ApiService, private CS: CookieService, private router: Router, private AS: AuthService) { }
 
   ngOnInit(): void {
-   this.matricula = this.CS.get('matricula');
+    // this.getHistorial();
+  //  this.matricula = this.CS.get('matricula');
   //  this.getHistorialUser();
-   this.getJuegos();
-   this.getNiveles();
-   this.getHistorial();
-   
+  //  this.getJuegos();
+  //  this.getNiveles();
+   this.getUsuarios();
+   this.getTipoUsuario();
   }
+
+  editar(id: any){
+    console.log('Editar: ' + id);
+    this.router.navigate(['/form-perfil',id]);
+  }
+  
+  eliminar(id: any){
+    console.log('Eliminar: ' + id);
+    this.AS.deleteUser(id).subscribe((data: any) =>{
+      if(data.status == 'User Deleted'){
+        console.log(data);
+        this.getUsuarios();
+      }
+    });
+  }
+
+  getUsuarios(){
+    this.api.getUsers().subscribe((data: any) => {
+      console.log(data);
+      this.usuarios = data;
+    });
+  }
+
+  getTipoUsuario(){
+    this.api.getTipoUser().subscribe((data: any) => {
+      console.log(data);
+      this.tipoUsuario = data;
+    });
+  }
+
+  ngOnDestroy(): void {
+
+  }
+
 
   getHistorial(){
     this.api.getHistoriales().subscribe((data: any) => {
       console.log(data);
       this.historial = data;
+      // this.dtTrigger.next(data);
     });
   }
 
