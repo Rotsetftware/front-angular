@@ -14,7 +14,7 @@
      
   
       <div class="navbar-end has-text-primary">
-        <a class="navbar-item">
+        <!-- <a class="navbar-item">
           Opcion
         </a>
         <a class="navbar-item">
@@ -25,7 +25,7 @@
         </a>
         <a class="navbar-item">
           Opcion
-        </a>
+        </a> -->
   
       
         <div class="navbar-item">
@@ -33,7 +33,7 @@
             <button *ngIf="tipoUsuario == 2" [routerLink]="['/home']" class="button is-success has-text-weight-medium"><a>Iniciar Sesión</a></button>
             <button *ngIf="tipoUsuario == 1" [routerLink]="['/inicio']" class="button is-success has-text-weight-medium"><a>Iniciar Sesión</a></button>
             <button *ngIf="tipoUsuario == 0" [routerLink]="['/login']" class="button is-success has-text-weight-medium"><a>Iniciar Sesión</a></button>
-            <button class="button is-primary is-light has-text-primary has-text-weight-medium" [routerLink]="['/welcome']">Acerca De</button>
+            <button class="button is-primary is-light has-text-primary has-text-weight-medium" [routerLink]="['/welcome']">Welcome</button>
           </div>
         </div>
       </div>
