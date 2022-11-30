@@ -15,8 +15,8 @@ export class SocketService extends Socket{
 
   ) {
     super({
-      url: 'http://localhost:5000',
-      // url: 'https://juegosocket.azurewebsites.net',
+      // url: 'http://localhost:5000',
+      url: 'https://juegosocket.azurewebsites.net',
       options: {
         query: {
           nameRoom: cookieService.get('room')
