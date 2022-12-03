@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-rank',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RankComponent implements OnInit {
 
-  constructor() { }
+  xdxdxd: any;
+
+  constructor(private CS: CookieService) { }
 
   ngOnInit(): void {
+    const cocsR = this.CS.get('rank');
+      const JSobjER = JSON.parse(cocsR);
+      this.xdxdxd = JSobjER;
+      console.log(this.xdxdxd);
+      // console.log(cocsR);
   }
 
 }

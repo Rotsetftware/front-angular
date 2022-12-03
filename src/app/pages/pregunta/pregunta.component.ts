@@ -43,7 +43,7 @@ export class PreguntaComponent implements OnInit {
     let intervalId = setInterval(() => {
       this.CS.delete('room');
       this.tiempo = this.tiempo - 1;
-      console.log(this.tiempo)
+      // console.log(this.tiempo)
       if (this.tiempo === 0) clearInterval(intervalId)
     }, 1000)
   }

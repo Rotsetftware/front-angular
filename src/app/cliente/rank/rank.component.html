@@ -1,1 +1,17 @@
-<p>rank works!</p>
+<div class="titulo"><h1>Tabla de pocisiones</h1></div>
+    <table class="table">
+        <thead class="table table-success table-striped">
+            <tr>
+                <th scope="col">Nombre</th>
+                <!-- <th scope="col">True/False</th> -->
+                <th scope="col">Puntos</th>
+              </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of xdxdxd.equipos">
+                <th scope="col">{{item.equipo}}</th>
+                <!-- <th scope="col">{{item.respuesta}}</th>            -->
+                <th scope="col">{{item.puntos}}</th>           
+            </tr>
+        </tbody>
+      </table>

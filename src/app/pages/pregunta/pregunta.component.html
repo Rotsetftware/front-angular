@@ -1,16 +1,31 @@
-<p>pregunta works!</p>
-<h1>{{tiempo}}</h1>
-<!-- <hr> -->
-<!-- <button (click)="random()">Baraja</button> -->
-<hr>
-<button (click)="seleccion()">Jugar</button>
-<hr>
-<div *ngFor="let pregunta of preguntas">
-    <h1>{{pregunta.pregunta}}</h1>
-    <h2>{{pregunta.puntaje}}</h2>
-    <h3>{{pregunta.tiempo}}</h3>
-    <h3>{{pregunta.respuesta1}}</h3>
-    <h3>{{pregunta.respuesta2}}</h3>
-    <h3>{{pregunta.respuesta3}}</h3>
-    <h3>{{pregunta.respuesta4}}</h3>
+<app-navadmin></app-navadmin>
+
+<div class="col-12">
+    <div class="px-5">
+        <button class="btn btn-success" (click)="seleccion()">Jugar</button>
+    </div>
+    <div class="row conten">
+        <div class="col-3" *ngFor="let pregunta of preguntas; let i = index">
+            <div class="card">
+                <!-- <img src="..." class="card-img-top" alt="img random o img de portada del test"> -->
+                <div class="card-body" align="center">
+                    <!-- <h5 class="card-title">{{pregunta.nivel}}</h5> -->
+                    <!-- <p class="card-text">Pequeña descripcion del juego</p> -->
+                    <!-- <a href="#" class="card-link">Another link</a> -->
+                    <p>{{i+1}}.- {{pregunta.pregunta}}</p>
+                    <p>Puntos: {{pregunta.puntaje}} | Tiempo: {{pregunta.tiempo}} s.</p>
+                </div>
+                <!-- <h3>{{pregunta.respuesta1}}</h3> -->
+                <!-- <h3>{{pregunta.respuesta2}}</h3> -->
+                <!-- <h3>{{pregunta.respuesta3}}</h3> -->
+                <!-- <h3>{{pregunta.respuesta4}}</h3> -->
+                <!-- <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Numero de preguntas</li>
+                    <li class="list-group-item">Tiempo total aprox</li>
+                    <li class="list-group-item">Nivel</li>
+                </ul> -->
+            </div>
+        </div>
+    </div>
 </div>
+
