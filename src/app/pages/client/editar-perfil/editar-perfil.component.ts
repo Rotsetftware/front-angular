@@ -17,7 +17,7 @@ export class EditarPerfilComponent implements OnInit {
   };
   final:Boolean = true;
   msn:string | undefined;
-  url = 'http://localhost/videojuego/subidas/';
+  url = 'https://braquetes.mx/videojuego/subidas/';
   id: any;
 
   constructor(private subir: FilesService, private AS: AuthService, private CS: CookieService, private router: Router) { }

@@ -10,8 +10,8 @@ import { Pregunta } from '../models/pregunta';
 })
 export class ApiService {
 
-  URL = 'http://localhost:3000';
-  //  URL = 'https://juegoplataforma.azurewebsites.net';
+  // URL = 'http://localhost:3000';
+   URL = 'https://juegoplataforma.azurewebsites.net';
 
   constructor(private http: HttpClient) { }
 
@@ -65,5 +65,13 @@ export class ApiService {
 
   deleteImg(id: any){
     return this.http.get(`${this.URL}/users/deleteImg/${id}`);
+  }
+  
+  updateIncorrecto(matricula: any,sala: any){
+    return this.http.get(`${this.URL}/historial/incorrecto/${matricula}/${sala}`);
+  }
+  
+  updateCorrecto(matricula: any,sala: any){
+    return this.http.get(`${this.URL}/historial/correcto/${matricula}/${sala}`);
   }
 }

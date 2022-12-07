@@ -72,8 +72,16 @@ export class ComienzajuegoComponent implements OnInit {
     console.log('resc: ' + resC);
     if(res == resC){
       this.SWS.emitEvent({ respuesta: 'correcto', equipo: this.xdxd.equipo, puntos: 0});
+      this.API.updateCorrecto(this.CS.get('matricula'),this.CS.get('room')).subscribe((data: any) => {
+        console.log(data);
+        
+      });
     }else{
       this.SWS.emitEvent({ respuesta: 'incorrecto', equipo: this.xdxd.equipo, puntos: 0});
+      this.API.updateIncorrecto(this.CS.get('matricula'),this.CS.get('room')).subscribe((data: any) => {
+        console.log(data);
+        
+      });
     }
   }
 

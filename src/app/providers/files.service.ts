@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class FilesService {
 
-  url = 'http://localhost/videojuego/subir.php';
+  url = 'https://braquetes.mx/videojuego/subir.php';
 
   constructor( private http: HttpClient) {
   }
