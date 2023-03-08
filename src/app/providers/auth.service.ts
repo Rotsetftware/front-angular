@@ -12,7 +12,7 @@ export class AuthService {
   constructor(private http: HttpClient, private CS: CookieService, private router: Router) { }
 
   //  URL = 'http://localhost:3000';
- URL = 'https://juegoplataforma.azurewebsites.net';
+ URL = 'https://backend-tijuana.azurewebsites.net';
 
   login(login: any): Observable<Request> {
     return this.http.post<Request>(

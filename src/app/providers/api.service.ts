@@ -11,7 +11,7 @@ import { Pregunta } from '../models/pregunta';
 export class ApiService {
 
   // URL = 'http://localhost:3000';
-   URL = 'https://juegoplataforma.azurewebsites.net';
+   URL = 'https://backend-tijuana.azurewebsites.net';
 
   constructor(private http: HttpClient) { }
 
